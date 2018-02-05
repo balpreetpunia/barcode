@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barcode Received</title>
+    <script src="JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Teletime Receive Deliveries</h1>
+            <p>Scan the following inputs to add the item to database</p>
+        </div>
+        <div class="input-field">
+            <form id="calculator">
+            <div class=" form-group input-group">
+                <input id="num" class="form-control" placeholder="UPC Code" type="text" />
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Scan</button>
+                </span>
+            </div>
+            <div class="form-group">
+                <input id="model" class="form-control" placeholder="Model" type="text" />
+            </div>
+            <div class="form-group">
+                <input id="po" class="form-control" placeholder="PO Number" type="text" />
+            </div>
+            <div class="btn-group btn-group-justified">
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="clickMe" type="button" value="clickme" onclick="code();" >Generate</button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-info" id="clickMe2" type="button" value="clickme2" onclick="window.print();" >Print</button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-success" id="clickMe3" type="button" value="clickme3" onclick="" >Submit</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <svg id="svg" class="barcode"
+             jsbarcode-format="upc"
+             jsbarcode-textmargin="0"
+             jsbarcode-fontoptions="bold">
+        </svg>
+        <div>
+            <p id="date"></p>
+            <p id="time"></p>
+            <p id="dis_model"></p>
+            <p id="dis_po"></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("clickMe").onclick = code();
+        function code()
+        {
+            document.getElementById('svg').setAttribute('jsbarcode-value' , document.getElementById('num').value);
+            JsBarcode(".barcode").init();
+
+            var d = new Date();
+            document.getElementById("date").innerHTML = "Date Received: " + d.toDateString();
+            document.getElementById("time").innerHTML = d.toLocaleTimeString();
+            document.getElementById("dis_model").innerHTML = "Model: " + document.getElementById('model').value;
+            document.getElementById("dis_po").innerHTML = "PO: " + document.getElementById('po').value;
+        }
+    </script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if( event.keyCode == 13 || event.keyCode == 17 || event.keyCode == 74 )
+                event.preventDefault();
+        });
+    </script>
+
+</body>
+</html>
