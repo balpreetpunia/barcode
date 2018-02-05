@@ -68,7 +68,7 @@
 
             var d = new Date();
             document.getElementById("date").innerHTML = "Date Received: " + d.toDateString();
-            document.getElementById("time").innerHTML = d.toLocaleTimeString();
+            document.getElementById("time").innerHTML = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
             document.getElementById("dis_model").innerHTML = "Model: " + document.getElementById('model').value;
             document.getElementById("dis_po").innerHTML = "PO: " + document.getElementById('po').value;
             document.getElementById("in-date").value = d.toDateString();
