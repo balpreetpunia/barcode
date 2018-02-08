@@ -19,6 +19,11 @@
         font-size: 18pt;
         font-weight: bold;
     }
+    #dis_serial{
+        text-align: center;
+        font-size: 18pt;
+        font-weight: bold;
+    }
     #dis_po{
         text-align: center;
         font-size: 18pt;
@@ -39,23 +44,28 @@
     #date{
         margin-top: 8%;
         text-align: center;
-        font-size: 28pt;
+        font-size: 22pt;
         font-weight: bold;
     }
     #time{
         text-align: center;
-        font-size: 26pt;
+        font-size: 22pt;
         font-weight: bold;
     }
     #dis_model{
         margin-top: 20%;
         text-align: center;
-        font-size: 26pt;
+        font-size: 22pt;
+        font-weight: bold;
+    }
+    #dis_serial{
+        text-align: center;
+        font-size: 22pt;
         font-weight: bold;
     }
     #dis_po{
         text-align: center;
-        font-size: 26pt;
+        font-size: 22pt;
         font-weight: bold;
     }
 }

@@ -27,6 +27,9 @@
                 <input id="model" name="model" class="form-control" placeholder="Model" type="text" />
             </div>
             <div class="form-group">
+                <input id="serial" name="serial" class="form-control" placeholder="Serial No." type="text" />
+            </div>
+            <div class="form-group">
                 <input id="po" name="po" class="form-control" placeholder="PO Number" type="text" />
             </div>
             <div class="btn-group btn-group-justified">
@@ -56,6 +59,7 @@
             <p id="date"></p>
             <p id="time"></p>
             <p id="dis_model"></p>
+            <p id="dis_serial"></p>
             <p id="dis_po"></p>
         </div>
     </div>
@@ -70,6 +74,7 @@
             document.getElementById("date").innerHTML = "Date Received: " + d.toDateString();
             document.getElementById("time").innerHTML = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
             document.getElementById("dis_model").innerHTML = "Model: " + document.getElementById('model').value;
+            document.getElementById("dis_serial").innerHTML = "Serial No: " + document.getElementById('serial').value;
             document.getElementById("dis_po").innerHTML = "PO: " + document.getElementById('po').value;
             document.getElementById("in-date").value = d.toDateString();
             document.getElementById("in-time").value = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
