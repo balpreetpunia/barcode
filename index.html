@@ -16,7 +16,7 @@
             <p>Scan the following inputs to add the item to database</p>
         </div>
         <div class="input-field">
-            <form id="calculator">
+            <form id="calculator" onsubmit="return confirm('Do you want to add the data to the database?');">
             <div class=" form-group input-group">
                 <input id="num" name="upc" class="form-control" placeholder="UPC Code" type="text" />
                 <span class="input-group-btn">
@@ -72,7 +72,7 @@
             document.getElementById("dis_model").innerHTML = "Model: " + document.getElementById('model').value;
             document.getElementById("dis_po").innerHTML = "PO: " + document.getElementById('po').value;
             document.getElementById("in-date").value = d.toDateString();
-            document.getElementById("in-time").value = d.toLocaleTimeString();
+            document.getElementById("in-time").value = d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
         }
     </script>
     <script>
