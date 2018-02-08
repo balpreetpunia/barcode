@@ -2,6 +2,7 @@
 
 @media screen {
     svg {
+        width: 30%; height: auto;
         display: block; margin: auto;
     }
     #date{
